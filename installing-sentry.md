@@ -86,3 +86,16 @@ sudo apt-get install certbot python-certbot-nginx -y
 
 sudo certbot --nginx
 ```
+
+## Adding SPF Record
+
+```sh
+
+curl ifconfig.me
+# output: 123.123.123.123
+
+# Create 
+Type: SPF
+Name: sentry
+Value: v=spf1 ip4:123.123.123.123 ~all
+```
