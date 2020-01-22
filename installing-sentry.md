@@ -80,3 +80,9 @@ sudo apt-get update
 
 sudo apt-get install certbot python-certbot-nginx -y
 ```
+
+
+```sh
+
+sudo certbot --nginx
+```
