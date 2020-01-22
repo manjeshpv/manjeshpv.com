@@ -24,8 +24,17 @@ sudo apt install docker-ce -y
 sudo systemctl status docker
 
 ```
+## installing docker compose - https://linuxize.com/post/how-to-install-and-use-docker-compose-on-ubuntu-18-04/
 
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+```
+
+## installing onpremise
 ```sh
 cd ~
 git clone https://github.com/getsentry/onpremise.git sentry
