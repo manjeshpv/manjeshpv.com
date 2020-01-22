@@ -42,4 +42,41 @@ git clone https://github.com/getsentry/onpremise.git sentry
 cd sentry
 
 ./install.sh
+
+docker-compose up -d
+```
+
+## Installing nginx
+```sh
+apt install nginx -y
+sudo systemctl enable nginx
+sudo systemctl start nginx
+cd /etc/nginx/conf.d
+nano sentry.manjeshpv.com.conf
+
+server {
+ listen 80;
+ server_name    sentry.manjeshpv.com default_server;
+ client_max_body_size 20M;
+
+  location / {
+    proxy_redirect off;
+    proxy_set_header   X-Real-IP         $remote_addr;
+    proxy_set_header   X-Forwarded-For   $proxy_add_x_forwarded_for;
+    proxy_set_header   X-Forwarded-Proto $scheme;
+    proxy_set_header   Host              $http_host;
+    proxy_pass http://127.0.0.1:9000;
+  }
+}
+```
+
+## Installing SSL
+
+```sh
+sudo apt-get install software-properties-common
+sudo add-apt-repository universe
+sudo add-apt-repository ppa:certbot/certbot
+sudo apt-get update
+
+sudo apt-get install certbot python-certbot-nginx -y
 ```
