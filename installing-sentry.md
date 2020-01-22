@@ -87,7 +87,9 @@ sudo apt-get install certbot python-certbot-nginx -y
 sudo certbot --nginx
 ```
 
-## Adding SPF Record
+## Adding SPF Record to avoid email going to spam
+
+![](/image.png)
 
 ```sh
 
