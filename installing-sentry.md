@@ -94,8 +94,9 @@ sudo certbot --nginx
 curl ifconfig.me
 # output: 123.123.123.123
 
-# Create 
+# Create SPF in your DNS using spf generator https://www.spf-record.com/generator.php?domain=sentry.manjeshpv.com
 Type: SPF
 Name: sentry
 Value: v=spf1 ip4:123.123.123.123 ~all
 ```
+After entering check using https://www.kitterman.com/spf/validate.html?
