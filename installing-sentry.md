@@ -24,3 +24,13 @@ sudo apt install docker-ce -y
 sudo systemctl status docker
 
 ```
+
+
+```sh
+cd ~
+git clone https://github.com/getsentry/onpremise.git sentry
+
+cd sentry
+
+./install.sh
+```
